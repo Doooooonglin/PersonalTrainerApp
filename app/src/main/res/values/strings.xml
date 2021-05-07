@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PersonalTrainerApp</string>
+    <string name="title_text">Personal Trainer Mobile App</string>
+    <string name="access_activity_btn_lbl">Access Activity</string>
+    <string name="create_new_member_btn_lbl">Create New Member</string>
+    <string name="reserve_a_schedule_btn_lbl">Reserve a Schedule</string>
 </resources>

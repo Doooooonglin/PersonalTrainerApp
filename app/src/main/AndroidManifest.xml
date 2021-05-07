@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalTrainerApp">
+        <activity android:name=".ReserveScheduleActivity"></activity>
+        <activity android:name=".CreateNewMemberActivity" />
+        <activity android:name=".AccessActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
