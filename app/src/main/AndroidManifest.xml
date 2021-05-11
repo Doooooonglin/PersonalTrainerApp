@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PersonalTrainerApp">
-        <activity android:name=".ReserveScheduleActivity"></activity>
+        <activity android:name=".accessactivity.viewlayer.screens.SlipSignScreen"></activity>
+        <activity android:name=".accessactivity.viewlayer.screens.CardScanScreen" />
+        <activity android:name=".accessactivity.viewlayer.screens.MemberScreen" />
+        <activity android:name=".ReserveScheduleActivity" />
         <activity android:name=".CreateNewMemberActivity" />
-        <activity android:name=".AccessActivity" />
+        <activity android:name=".accessactivity.viewlayer.screens.AccessActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

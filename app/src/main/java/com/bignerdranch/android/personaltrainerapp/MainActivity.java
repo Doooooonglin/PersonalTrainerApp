@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.bignerdranch.android.personaltrainerapp.accessactivity.viewlayer.screens.AccessActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //Declare fields for the widgets
     private Button mAccessActivityButton, mCreateNewMemberButton, mReserveScheduleButton;
