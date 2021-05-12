@@ -9,12 +9,45 @@
     tools:context=".accessactivity.viewlayer.screens.AccessActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/charge_slip_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="@string/enter_name_lbl"
         android:textSize="28sp"
         android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/enter_name_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="@string/enter_name_btn_text" />
+
+    <TextView
+        android:id="@+id/member_info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:height="200dp" />
+
+    <Button
+        android:id="@+id/to_card_screen_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:enabled="false"
+        android:text="@string/to_card_screen_btn" />
 </LinearLayout>

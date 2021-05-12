@@ -9,12 +9,92 @@
     tools:context=".accessactivity.viewlayer.screens.AccessActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/charge_slip_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="@string/enter_card_id_txt"
         android:textSize="28sp"
         android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/card_id_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/card_type_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/get_card_info_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:enabled="true"
+        android:text="@string/get_card_info_txt" />
+
+    <TextView
+        android:id="@+id/enter_name_text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:enabled="true"
+        android:gravity="center"
+        android:text="@string/enter_name_lbl"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/member_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/enter_activity_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:enabled="true"
+        android:gravity="center"
+        android:text="@string/enter_activity_name_txt"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/activity_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/to_charge_slip_screen_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:enabled="false"
+        android:text="@string/create_charge_slip_txt" />
+
 </LinearLayout>

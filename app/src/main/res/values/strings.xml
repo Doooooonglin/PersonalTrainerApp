@@ -4,4 +4,13 @@
     <string name="access_activity_btn_lbl">Access Activity</string>
     <string name="create_new_member_btn_lbl">Create New Member</string>
     <string name="reserve_a_schedule_btn_lbl">Reserve a Schedule</string>
+    <string name="enter_name_lbl">Enter a Member Name (First Last):</string>
+    <string name="enter_name_btn_text">Enter Name</string>
+    <string name="to_card_screen_btn">Proceed to Card Scan</string>
+    <string name="enter_card_id_txt">Enter the card no.</string>
+    <string name="enter_activity_name_txt">Enter the name of the activity:</string>
+    <string name="create_charge_slip_txt">Create a Charge Slip</string>
+    <string name="get_card_info_txt">Retrieve a Member Card</string>
+    <string name="signature_text">Check off to sign the slip</string>
+    <string name="signature_submit_btn_txt">Submit the Signature</string>
 </resources>

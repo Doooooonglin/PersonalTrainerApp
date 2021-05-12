@@ -9,12 +9,38 @@
     tools:context=".accessactivity.viewlayer.screens.AccessActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/charge_slip_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:height="200dp"
         android:gravity="center"
-        android:text="TextView"
         android:textSize="28sp"
         android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/signature_check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/signature_text" />
+
+    <EditText
+        android:id="@+id/signature_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:enabled="false"
+        android:text="@string/signature_submit_btn_txt" />
 </LinearLayout>
