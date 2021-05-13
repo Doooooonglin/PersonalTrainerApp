@@ -103,7 +103,7 @@ public class Transaction {
         ClassActivity activity = new ClassActivity();
         activity = activity.RecordClassActivityInfo(mActivityName);
 
-        mChargeSlip = mChargeSlip.createChargeSlip(membershipID, mMemberName, mActivityName);
+        mChargeSlip = mChargeSlip.createChargeSlip(membershipID, member, activity);
 
         DatabaseHelper helper = new DatabaseHelper(null);
 
