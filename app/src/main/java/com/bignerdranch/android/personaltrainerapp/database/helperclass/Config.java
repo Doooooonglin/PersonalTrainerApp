@@ -48,4 +48,22 @@ public class Config {
             ConfigTransaction.COLUMN_PAYMENT_TYPE + " VARCHAR(255), " +
             ConfigTransaction.COLUMN_AMOUNT + " Double(6, 2), " +
             ConfigTransaction.COLUMN_DATE + " VARCHAR(255);";
+
+    public static final String DROP_TABLE_CLASS_ACTIVITY = "DROP TABLE IF EXISTS " + ConfigClassActivity.CLASS_ACTIVITY_TABLE_NAME;
+
+    public static final String DROP_TABLE_MEMBER = "DROP TABLE IF EXISTS " + ConfigMember.MEMBER_TABLE_NAME;
+
+    public static final String DROP_TABLE_MEMBER_CARD = "DROP TABLE IF EXISTS " + ConfigMemberCard.MEMBER_CARD_TABLE_NAME;
+
+    public static final String DROP_TABLE_MEMBERSHIP = "DROP TABLE IF EXISTS " + ConfigMembership.MEMBERSHIP_TABLE_NAME;
+
+    public static final String DROP_TABLE_TRANSACTION = "DROP TABLE IF EXISTS " + ConfigTransaction.TRANSACTION_TABLE_NAME;
+
+    public static final String MEMBER_SELECT_ALL_BY_NAME = "Select * From " + ConfigMember.MEMBER_TABLE_NAME + " Where " + ConfigMember.COLUMN_NAME + " = ?";
+
+    public static final String MEMBERSHIP_SELECT_ALL_BY_ID = "Select * From " + ConfigMembership.MEMBERSHIP_TABLE_NAME + " Where " + ConfigMembership.COLUMN_MEMBER_ID + " = ?";
+
+    public static final String MEMBER_CARD_SELECT_ALL_BY_ID = "Select * From " + ConfigMemberCard.MEMBER_CARD_TABLE_NAME + " Where " + ConfigMemberCard.COLUMN_MEMBERSHIP_ID + " = ?";
+
+    public static final String TRANSACTION_SELECT_ALL_BY_ID = "Select * From " + ConfigTransaction.TRANSACTION_TABLE_NAME + " Where " + ConfigTransaction.COLUMN_TRANSACTION_ID + " = ?";
 }

@@ -1,6 +1,9 @@
 package com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer;
 
+import android.database.Cursor;
+
 import com.bignerdranch.android.personaltrainerapp.accessactivity.businesslayer.ChargeSlip;
+import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
 
 public class Transaction {
     private int mTransactionID;
@@ -91,6 +94,31 @@ public class Transaction {
     }
 
     public Transaction CreateNewTransaction(int membershipID, String memberName, String activityName) {
-        return null;
+        mMemberName = memberName;
+        mActivityName = activityName;
+
+        Member member = new Member();
+        member = member.RecordMemberInfo(mMemberName);
+
+        ClassActivity activity = new ClassActivity();
+        activity = activity.RecordClassActivityInfo(mActivityName);
+
+        mChargeSlip = mChargeSlip.createChargeSlip(membershipID, mMemberName, mActivityName);
+
+        DatabaseHelper helper = new DatabaseHelper(null);
+
+        helper.insertTransactionData(1, "type", 1f, "date");
+
+        Cursor resultSet = helper.getTransaction(1);
+
+        Transaction transaction = new Transaction(
+                resultSet.getInt(1),
+                resultSet.getString(2),
+                resultSet.getDouble(3),
+                resultSet.getString(4)
+        );
+        transaction.setChargeSlip(mChargeSlip);
+
+        return transaction;
     }
 }

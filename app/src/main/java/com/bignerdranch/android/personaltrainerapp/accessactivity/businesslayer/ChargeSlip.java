@@ -1,5 +1,8 @@
 package com.bignerdranch.android.personaltrainerapp.accessactivity.businesslayer;
 
+import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.ClassActivity;
+import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Member;
+
 public class ChargeSlip {
     private int mTransactionID;
     private boolean mHasSignature;
@@ -67,5 +70,11 @@ public class ChargeSlip {
                 ", mHasFllMembership=" + mHasFllMembership +
                 ", mDate='" + mDate + '\'' +
                 '}';
+    }
+
+    public ChargeSlip createChargeSlip(int memberID, Member member, ClassActivity activity) {
+        ChargeSlip newSlip = new ChargeSlip(1, false, 1f, true, "date");
+
+        return newSlip;
     }
 }

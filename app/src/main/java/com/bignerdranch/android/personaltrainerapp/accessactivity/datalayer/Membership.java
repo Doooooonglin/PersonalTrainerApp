@@ -1,5 +1,11 @@
 package com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer;
 
+import android.database.Cursor;
+
+import com.bignerdranch.android.personaltrainerapp.accessactivity.viewlayer.screens.CardScanScreen;
+import com.bignerdranch.android.personaltrainerapp.database.accessactivity.ConfigMembership;
+import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
+
 public class Membership {
     private int mMemberID;
     private String mSignUpDate;
@@ -70,6 +76,18 @@ public class Membership {
     }
 
     public Membership GetMembershipInfo(int membershipID) {
-        return null;
+        DatabaseHelper helper = new DatabaseHelper(null);
+
+        Cursor resultSet = helper.retrieveMembership(membershipID);
+
+        Membership newMembership = new Membership(
+                resultSet.getInt(1),
+                resultSet.getString(2),
+                resultSet.getString(3),
+                resultSet.getString(4),
+                resultSet.getString(5)
+        );
+
+        return newMembership;
     }
 }

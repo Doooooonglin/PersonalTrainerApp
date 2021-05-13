@@ -1,5 +1,9 @@
 package com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer;
 
+import android.database.Cursor;
+
+import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
+
 import java.util.Date;
 
 public class Member {
@@ -105,6 +109,21 @@ public class Member {
     }
 
     public Member RecordMemberInfo(String memberName) {
-        return null;
+        DatabaseHelper helper = new DatabaseHelper(null);
+
+        Cursor resultSet = helper.retrieveMember(memberName);
+
+        Member member = new Member(
+                resultSet.getString(1),
+                resultSet.getString(2),
+                resultSet.getString(3).charAt(0),
+                resultSet.getString(4),
+                resultSet.getString(5),
+                resultSet.getDouble(6),
+                resultSet.getString(7),
+                true
+        );
+
+        return member;
     }
 }

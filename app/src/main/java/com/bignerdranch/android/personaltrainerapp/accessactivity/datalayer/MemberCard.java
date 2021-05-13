@@ -1,5 +1,9 @@
 package com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer;
 
+import android.database.Cursor;
+
+import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
+
 public class MemberCard {
     private int mMembershipID;
     private String mPhotoDir;
@@ -97,11 +101,25 @@ public class MemberCard {
     }
 
     public Membership RetrieveMemberCardInfo(int membershipID) {
-        return null;
+        DatabaseHelper helper = new DatabaseHelper(null);
+
+        Cursor resultSet = helper.retrieveMembercard(membershipID);
+
+        MemberCard card = new MemberCard(
+                resultSet.getInt(1),
+                resultSet.getString(2)
+        );
+        card.setMembership(card.RetrieveMemberCardInfo(membershipID));
+
+        mMembership = mMembership.GetMembershipInfo(membershipID);
+
+        return mMembership;
     }
 
     public Transaction CreateNewTransaction(int membershipID, String memberName, String activityName) {
-        return null;
+        mTransaction = mTransaction.CreateNewTransaction(membershipID, memberName, activityName);
+
+        return mTransaction;
     }
 
     public void UpdateSlipSignature(int transactionID, boolean hasSignature) {
