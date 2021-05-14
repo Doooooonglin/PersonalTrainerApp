@@ -75,7 +75,7 @@ public class Membership {
                 '}';
     }
 
-    public Membership GetMembershipInfo(int membershipID) {
+    /*public Membership GetMembershipInfo(int membershipID) {
         DatabaseHelper helper = new DatabaseHelper(null);
 
         Cursor resultSet = helper.retrieveMembership(membershipID);
@@ -89,5 +89,5 @@ public class Membership {
         );
 
         return newMembership;
-    }
+    }*/
 }

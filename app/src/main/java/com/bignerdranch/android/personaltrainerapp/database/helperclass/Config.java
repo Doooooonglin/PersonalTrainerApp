@@ -66,4 +66,6 @@ public class Config {
     public static final String MEMBER_CARD_SELECT_ALL_BY_ID = "Select * From " + ConfigMemberCard.MEMBER_CARD_TABLE_NAME + " Where " + ConfigMemberCard.COLUMN_MEMBERSHIP_ID + " = ?";
 
     public static final String TRANSACTION_SELECT_ALL_BY_ID = "Select * From " + ConfigTransaction.TRANSACTION_TABLE_NAME + " Where " + ConfigTransaction.COLUMN_TRANSACTION_ID + " = ?";
+
+    public static final String CLASS_ACTIVITY_SELECT_ALL_BY_NAME = "Select * From " + ConfigClassActivity.CLASS_ACTIVITY_TABLE_NAME + " Where " + ConfigClassActivity.COLUMN_NAME + " = ?";
 }

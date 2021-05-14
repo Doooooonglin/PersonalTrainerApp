@@ -93,32 +93,7 @@ public class Transaction {
                 '}';
     }
 
-    public Transaction CreateNewTransaction(int membershipID, String memberName, String activityName) {
-        mMemberName = memberName;
-        mActivityName = activityName;
-
-        Member member = new Member();
-        member = member.RecordMemberInfo(mMemberName);
-
-        ClassActivity activity = new ClassActivity();
-        activity = activity.RecordClassActivityInfo(mActivityName);
-
-        mChargeSlip = mChargeSlip.createChargeSlip(membershipID, member, activity);
-
-        DatabaseHelper helper = new DatabaseHelper(null);
-
-        helper.insertTransactionData(1, "type", 1f, "date");
-
-        Cursor resultSet = helper.getTransaction(1);
-
-        Transaction transaction = new Transaction(
-                resultSet.getInt(1),
-                resultSet.getString(2),
-                resultSet.getDouble(3),
-                resultSet.getString(4)
-        );
-        transaction.setChargeSlip(mChargeSlip);
-
-        return transaction;
+    public void UpdateSlipSignature(int transactionID, boolean hasSignature) {
+        mChargeSlip.EnterSignature(transactionID, hasSignature);
     }
 }

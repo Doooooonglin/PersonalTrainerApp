@@ -69,8 +69,4 @@ public class ClassActivity {
                 ", mRegisteredMembers=" + mRegisteredMembers +
                 '}';
     }
-
-    public ClassActivity RecordClassActivityInfo(String activityName) {
-        return null;
-    }
 }

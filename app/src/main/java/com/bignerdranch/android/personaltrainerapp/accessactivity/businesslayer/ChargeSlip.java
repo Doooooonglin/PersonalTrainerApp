@@ -2,6 +2,7 @@ package com.bignerdranch.android.personaltrainerapp.accessactivity.businesslayer
 
 import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.ClassActivity;
 import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Member;
+import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Transaction;
 
 public class ChargeSlip {
     private int mTransactionID;
@@ -9,6 +10,7 @@ public class ChargeSlip {
     private double mAmount;
     private boolean mHasFllMembership;
     private String mDate;
+    private ChargeSlip mSlip;
 
     public ChargeSlip() {
     }
@@ -72,9 +74,17 @@ public class ChargeSlip {
                 '}';
     }
 
-    public ChargeSlip createChargeSlip(int memberID, Member member, ClassActivity activity) {
-        ChargeSlip newSlip = new ChargeSlip(1, false, 1f, true, "date");
+    public ChargeSlip createChargeSlip(Transaction transaction) {
+        mSlip = new ChargeSlip(transaction.getTransactionID(), false, transaction.getAmount(), false, "date");
 
-        return newSlip;
+        return mSlip;
+    }
+
+    public void EnterSignature(int transactionID, boolean hasSignature) {
+        mTransactionID = transactionID;
+
+        if(mSlip.getTransactionID() == transactionID) {
+            mSlip.setHasSignature(hasSignature);
+        }
     }
 }

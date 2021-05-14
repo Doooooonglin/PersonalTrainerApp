@@ -100,29 +100,13 @@ public class MemberCard {
                 '}';
     }
 
-    public Membership RetrieveMemberCardInfo(int membershipID) {
-        DatabaseHelper helper = new DatabaseHelper(null);
-
-        Cursor resultSet = helper.retrieveMembercard(membershipID);
-
-        MemberCard card = new MemberCard(
-                resultSet.getInt(1),
-                resultSet.getString(2)
-        );
-        card.setMembership(card.RetrieveMemberCardInfo(membershipID));
-
-        mMembership = mMembership.GetMembershipInfo(membershipID);
-
-        return mMembership;
-    }
-
     public Transaction CreateNewTransaction(int membershipID, String memberName, String activityName) {
-        mTransaction = mTransaction.CreateNewTransaction(membershipID, memberName, activityName);
+        mTransaction = TransactionDB.CreateNewTransaction(membershipID, memberName, activityName);
 
         return mTransaction;
     }
 
     public void UpdateSlipSignature(int transactionID, boolean hasSignature) {
-
+        mTransaction.UpdateSlipSignature(transactionID, hasSignature);
     }
 }

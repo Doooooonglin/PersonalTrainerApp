@@ -75,6 +75,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor retrieveClassActivity(String activityName) {
+        //Retrieve the DB
+        sqLiteDatabase = this.getWritableDatabase();
+
+        //Create a query to select all the rows (here it was already defined as a constant)
+        //Returns a resultSet, i.e. the cursor, send it back to the main activity to display
+        Cursor cursor = sqLiteDatabase.rawQuery(Config.CLASS_ACTIVITY_SELECT_ALL_BY_NAME, new String[] {activityName});
+
+        return cursor;
+    }
+
     public long insertTransactionData(int transactionID, String paymentType, double amount, String date) {
         //Create a new instance of the ContentValues class & take the data from the EditTexts
         ContentValues contentValues = new ContentValues();

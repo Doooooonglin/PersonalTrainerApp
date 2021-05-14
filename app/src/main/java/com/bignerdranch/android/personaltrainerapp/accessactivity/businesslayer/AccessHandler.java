@@ -4,7 +4,10 @@ import android.database.Cursor;
 
 import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Member;
 import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.MemberCard;
+import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.MemberCardDB;
+import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.MemberDB;
 import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Membership;
+import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.MembershipDB;
 import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Transaction;
 import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
 
@@ -14,11 +17,13 @@ public class AccessHandler {
     private MemberCard mMemberCard;
 
     public Member RetrieveMemberInfo(String memberName) {
-        return null;
+        mMember = MemberDB.RecordMemberInfo(memberName);
+
+        return mMember;
     }
 
     public MemberCard RetrieveMemberCardInfo(int memberID) {
-        mMemberCard.setMembership(mMemberCard.RetrieveMemberCardInfo(memberID));
+        mMemberCard = MemberCardDB.RetrieveMemberCardInfo(memberID);
 
         return mMemberCard;
     }
@@ -30,6 +35,6 @@ public class AccessHandler {
     }
 
     public void UpdateSlipSignature(int transactionID, boolean hasSignature) {
-
+        mMemberCard.UpdateSlipSignature(transactionID, hasSignature);
     }
 }

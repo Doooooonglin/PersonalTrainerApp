@@ -107,23 +107,4 @@ public class Member {
                 ", mIsActive=" + mIsActive +
                 '}';
     }
-
-    public Member RecordMemberInfo(String memberName) {
-        DatabaseHelper helper = new DatabaseHelper(null);
-
-        Cursor resultSet = helper.retrieveMember(memberName);
-
-        Member member = new Member(
-                resultSet.getString(1),
-                resultSet.getString(2),
-                resultSet.getString(3).charAt(0),
-                resultSet.getString(4),
-                resultSet.getString(5),
-                resultSet.getDouble(6),
-                resultSet.getString(7),
-                true
-        );
-
-        return member;
-    }
 }
