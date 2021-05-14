@@ -23,15 +23,16 @@ public class AccessHandler {
     }
 
     public MemberCard RetrieveMemberCardInfo(int memberID) {
-        mMemberCard = MemberCardDB.RetrieveMemberCardInfo(memberID);
+        mMemberCard = new MemberCard();
+        mMemberCard = mMemberCard.RetrieveMemberCardInfo(memberID);
 
         return mMemberCard;
     }
 
-    public int CreateChargeSlip(int memberID, String memberName, String activityName) {
-        Transaction transactionID = mMemberCard.CreateNewTransaction(memberID, memberName, activityName);
+    public int CreateChargeSlip(String memberName, String activityName, String paymentType, double amount, String date, String memberType) {
+        Transaction transaction = mMemberCard.CreateNewTransaction(memberName, activityName, paymentType, amount, date, memberType);
 
-        return transactionID.getTransactionID();
+        return transaction.getTransactionID();
     }
 
     public void UpdateSlipSignature(int transactionID, boolean hasSignature) {

@@ -3,14 +3,11 @@ package com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer;
 import android.database.Cursor;
 
 import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
+import com.bignerdranch.android.personaltrainerapp.database.helperclass.GlobalAppContextSingleton;
 
 public class MemberCard {
     private int mMembershipID;
     private String mPhotoDir;
-    private int mTransactionID;
-    private boolean mHasSignature;
-    private String mMemberName;
-    private String mActivityName;
     private Membership mMembership;
     private Transaction mTransaction;
 
@@ -38,38 +35,6 @@ public class MemberCard {
         mPhotoDir = photoDir;
     }
 
-    public int getTransactionID() {
-        return mTransactionID;
-    }
-
-    public void setTransactionID(int transactionID) {
-        mTransactionID = transactionID;
-    }
-
-    public boolean isHasSignature() {
-        return mHasSignature;
-    }
-
-    public void setHasSignature(boolean hasSignature) {
-        mHasSignature = hasSignature;
-    }
-
-    public String getMemberName() {
-        return mMemberName;
-    }
-
-    public void setMemberName(String memberName) {
-        mMemberName = memberName;
-    }
-
-    public String getActivityName() {
-        return mActivityName;
-    }
-
-    public void setActivityName(String activityName) {
-        mActivityName = activityName;
-    }
-
     public Membership getMembership() {
         return mMembership;
     }
@@ -91,17 +56,29 @@ public class MemberCard {
         return "MemberCard{" +
                 "mMembershipID=" + mMembershipID +
                 ", mPhotoDir='" + mPhotoDir + '\'' +
-                ", mTransactionID=" + mTransactionID +
-                ", mHasSignature=" + mHasSignature +
-                ", mMemberName='" + mMemberName + '\'' +
-                ", mActivityName='" + mActivityName + '\'' +
                 ", mMembership=" + mMembership +
                 ", mTransaction=" + mTransaction +
                 '}';
     }
 
-    public Transaction CreateNewTransaction(int membershipID, String memberName, String activityName) {
-        mTransaction = TransactionDB.CreateNewTransaction(membershipID, memberName, activityName);
+    public MemberCard RetrieveMemberCardInfo(int membershipID) {
+        DatabaseHelper helper = new DatabaseHelper(GlobalAppContextSingleton.getInstance().getApplicationContext());
+
+        Cursor resultSet = helper.retrieveMembercard(membershipID);
+
+        MemberCard card = new MemberCard(
+                resultSet.getInt(1),
+                resultSet.getString(2)
+        );
+        Membership membership = MembershipDB.GetMembershipInfo(membershipID);
+        card.setMembership(membership);
+
+        return card;
+    }
+
+    public Transaction CreateNewTransaction(String memberName, String activityName, String paymentType, double amount, String date, String memberType) {
+        mTransaction = new Transaction();
+        mTransaction = mTransaction.CreateNewTransaction(memberName, activityName, paymentType, amount, date, memberType);
 
         return mTransaction;
     }

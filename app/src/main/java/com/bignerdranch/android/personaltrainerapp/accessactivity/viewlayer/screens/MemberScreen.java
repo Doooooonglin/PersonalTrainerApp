@@ -27,13 +27,14 @@ public class MemberScreen extends AppCompatActivity {
     public void EnterMemberName(String memberName) {
         AccessHandler handler = new AccessHandler();
 
-        Member member = new Member();
-        member = handler.RetrieveMemberInfo(memberName);
+        Member member = handler.RetrieveMemberInfo(memberName);
+        String memName = member.getName();
+        String address = member.getAddress();
+        char gender = member.getGender();
+        String phoneNum = member.getPhoneNum();
+        String email = member.getEmail();
+        double fee = member.getFee();
+        String lastPayment = member.getLastPayment();
+        boolean isActive = member.isActive();
     }
-
-    public MemberScreen(Context ctx) {
-        this.ctx = ctx.getApplicationContext();
-    }
-
-
 }

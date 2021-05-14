@@ -15,7 +15,8 @@ public class MemberCardDB {
                 resultSet.getInt(1),
                 resultSet.getString(2)
         );
-        card.setMembership(MembershipDB.GetMembershipInfo(membershipID));
+        Membership membership = MembershipDB.GetMembershipInfo(membershipID);
+        card.setMembership(membership);
 
         return card;
     }

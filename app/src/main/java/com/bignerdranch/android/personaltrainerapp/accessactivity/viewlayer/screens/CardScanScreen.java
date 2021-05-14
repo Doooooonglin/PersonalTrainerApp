@@ -25,10 +25,11 @@ public class CardScanScreen extends AppCompatActivity {
         mHandler = new AccessHandler();
 
         MemberCard card = mHandler.RetrieveMemberCardInfo(membershipID);
+        String type = card.getMembership().getType();
     }
 
-    public void createChargeSlip(int membershipID, String memberName, String activityName) {
-        int newSlip = mHandler.CreateChargeSlip(membershipID, memberName, activityName);
+    public void createChargeSlip(String memberName, String activityName, String paymentType, double amount, String date, String memberType) {
+        int transactionID = mHandler.CreateChargeSlip(memberName, activityName, paymentType, amount, date, memberType);
     }
 
     public void UpdateSlipSignature(int transactionID, boolean hasSignature) {

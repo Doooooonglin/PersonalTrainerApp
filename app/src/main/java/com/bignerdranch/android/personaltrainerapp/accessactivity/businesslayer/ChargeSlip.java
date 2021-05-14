@@ -6,6 +6,8 @@ import com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer.Tran
 
 public class ChargeSlip {
     private int mTransactionID;
+    private String mMemberName;
+    private String mActivityName;
     private boolean mHasSignature;
     private double mAmount;
     private boolean mHasFllMembership;
@@ -15,8 +17,10 @@ public class ChargeSlip {
     public ChargeSlip() {
     }
 
-    public ChargeSlip(int transactionID, boolean hasSignature, double amount, boolean hasFllMembership, String date) {
+    public ChargeSlip(int transactionID, String memberName, String activityName, boolean hasSignature, double amount, boolean hasFllMembership, String date) {
         mTransactionID = transactionID;
+        mMemberName = memberName;
+        mActivityName = activityName;
         mHasSignature = hasSignature;
         mAmount = amount;
         mHasFllMembership = hasFllMembership;
@@ -29,6 +33,22 @@ public class ChargeSlip {
 
     public void setTransactionID(int transactionID) {
         mTransactionID = transactionID;
+    }
+
+    public String getMemberName() {
+        return mMemberName;
+    }
+
+    public void setMemberName(String memberName) {
+        mMemberName = memberName;
+    }
+
+    public String getActivityName() {
+        return mActivityName;
+    }
+
+    public void setActivityName(String activityName) {
+        mActivityName = activityName;
     }
 
     public boolean isHasSignature() {
@@ -63,19 +83,16 @@ public class ChargeSlip {
         mDate = date;
     }
 
-    @Override
-    public String toString() {
-        return "ChargeSlip{" +
-                "mTransactionID=" + mTransactionID +
-                ", mHasSignature=" + mHasSignature +
-                ", mAmount=" + mAmount +
-                ", mHasFllMembership=" + mHasFllMembership +
-                ", mDate='" + mDate + '\'' +
-                '}';
+    public ChargeSlip getSlip() {
+        return mSlip;
     }
 
-    public ChargeSlip createChargeSlip(Transaction transaction) {
-        mSlip = new ChargeSlip(transaction.getTransactionID(), false, transaction.getAmount(), false, "date");
+    public void setSlip(ChargeSlip slip) {
+        mSlip = slip;
+    }
+
+    public ChargeSlip createChargeSlip(Transaction transaction, boolean membershipType) {
+        mSlip = new ChargeSlip(transaction.getTransactionID(), transaction.getMemberName(), transaction.getActivityName(), false, transaction.getAmount(), membershipType, transaction.getDate());
 
         return mSlip;
     }
