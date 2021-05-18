@@ -9,12 +9,121 @@
     tools:context=".CreateNewMemberActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/screen_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="TextView"
+        android:text="Registration Form"
         android:textSize="28sp"
         android:textStyle="bold" />
+    <TextView
+        android:id="@+id/form_info_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Name (Last, First)"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_form_info_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/form_info_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Address"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_form_info_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:inputType="textPostalAddress" />
+    <TextView
+        android:id="@+id/form_info_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Gender"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+    <RadioGroup
+        android:id="@+id/edt_form_info_gender_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <RadioButton
+        android:id="@+id/edt_form_info_gender_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female"
+        />
+    <RadioButton
+        android:id="@+id/edt_form_info_gender_m"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        />
+    <RadioButton
+        android:id="@+id/edt_form_info_gender_na"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prefer not to say"
+        />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/form_info_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Phone Number"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_form_info_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/form_info_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Email"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/edt_form_info_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+<!--    is other info coming from membership cl;ass orrrrr -->
+    <Button
+        android:id="@+id/submit_member_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:enabled="true"
+        android:text="Submit" />
 </LinearLayout>
