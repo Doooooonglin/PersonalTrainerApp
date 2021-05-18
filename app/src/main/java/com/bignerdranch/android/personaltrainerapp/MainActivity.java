@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v.getId() == R.id.create_new_member_btn) {
             mIntent = new Intent(MainActivity.this, CreateNewMemberActivity.class);
-
             startActivity(mIntent);
         }
         else if(v.getId() == R.id.reserve_a_schedule_btn) {

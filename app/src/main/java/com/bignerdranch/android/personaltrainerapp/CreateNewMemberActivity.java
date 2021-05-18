@@ -2,6 +2,7 @@ package com.bignerdranch.android.personaltrainerapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -16,12 +17,13 @@ import com.bignerdranch.android.personaltrainerapp.R;
 import com.bignerdranch.android.personaltrainerapp.accessactivity.businesslayer.AccessHandler;
 import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
 
-public class CreateNewMemberActivity extends AppCompatActivity implements View.OnTouchListener{
+public class CreateNewMemberActivity extends AppCompatActivity implements View.OnClickListener{
 
     private DatabaseHelper dbHelper;
     private EditText edttxtName, editTextAddress,editTextPhoneNum,editTextEmail;
     private RadioGroup radioGroupGender;
     private RadioButton radioButtonGender;
+    private SQLiteDatabase sqLiteDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,33 @@ public class CreateNewMemberActivity extends AppCompatActivity implements View.O
         editTextPhoneNum = findViewById(R.id.edt_form_info_phone);
         editTextEmail = findViewById(R.id.edt_form_info_email);
 
+        dbHelper = new DatabaseHelper(CreateNewMemberActivity.this);
+        sqLiteDatabase = dbHelper.getWritableDatabase();
+    }
+
+//    add buttonclicked to insert myDBHelper.insertTable(name,address,gender,etc);
+
+
+//    @Override
+//    public boolean onTouch(View v, MotionEvent event) {
+//        int posX = (int) event.getX();
+//        int posY = (int) event.getY();
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                Log.i("TAG", "action down");
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                Log.i("TAG", "action up");
+//                break;
+//        }
+//        return true;
+//    }
+
+
+    @Override
+    public void onClick(View v) {
         String mName = edttxtName.getText().toString();
         String mAddress = editTextAddress.getText().toString();
-
-        //more complicated to get selected gender,requires id retrieval
         int mGenderId = radioGroupGender.getCheckedRadioButtonId();
         radioButtonGender = (RadioButton) findViewById(mGenderId);
         String mGender = radioButtonGender.getText().toString();
@@ -44,25 +69,6 @@ public class CreateNewMemberActivity extends AppCompatActivity implements View.O
         String mPhoneNum = editTextPhoneNum.getText().toString();
         String mEmail = editTextEmail.getText().toString();
 
-        dbHelper = new DatabaseHelper(CreateNewMemberActivity.this);
+        dbHelper.insertMember(mName,mAddress,mGender,mPhoneNum,mEmail);
     }
-
-//    add buttonclicked to insert myDBHelper.insertTable(name,address,gender,etc);
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        int posX = (int) event.getX();
-        int posY = (int) event.getY();
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                Log.i("TAG", "action down");
-                break;
-            case MotionEvent.ACTION_UP:
-                Log.i("TAG", "action up");
-                break;
-        }
-        return true;
-    }
-
-
 }

@@ -15,7 +15,6 @@ import com.bignerdranch.android.personaltrainerapp.database.accessactivity.Confi
 public class DatabaseHelper extends SQLiteOpenHelper {
     private SQLiteDatabase sqLiteDatabase;
     private Context mContext;
-    private static final String MEMBER_TABLE_NAME="member";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, Config.DATABASE_NAME, null, Config.DATABASE_VERSION);
@@ -53,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         showToast(contentValues.toString());
         sqLiteDatabase = this.getWritableDatabase();
-        long rowId = sqLiteDatabase(MEMBER_TABLE_NAME,null,contentValues);
+        long rowId = sqLiteDatabase.insert(ConfigMember.MEMBER_TABLE_NAME,null,contentValues);
         return rowId;
     }
 
