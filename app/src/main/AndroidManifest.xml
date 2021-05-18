@@ -13,7 +13,7 @@
         <activity android:name=".accessactivity.viewlayer.screens.CardScanScreen" />
         <activity android:name=".accessactivity.viewlayer.screens.MemberScreen" />
         <activity android:name=".ReserveScheduleActivity" />
-        <activity android:name=".CreateNewMemberActivity" />
+        <activity android:name=".createnewmember.vlayer.CreateNewMemberActivity" />
         <activity android:name=".accessactivity.viewlayer.screens.AccessActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
