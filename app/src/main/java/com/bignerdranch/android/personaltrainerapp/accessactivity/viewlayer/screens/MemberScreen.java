@@ -30,7 +30,7 @@ public class MemberScreen extends AppCompatActivity {
         Member member = handler.RetrieveMemberInfo(memberName);
         String memName = member.getName();
         String address = member.getAddress();
-        char gender = member.getGender();
+        String gender = member.getGender();
         String phoneNum = member.getPhoneNum();
         String email = member.getEmail();
         double fee = member.getFee();

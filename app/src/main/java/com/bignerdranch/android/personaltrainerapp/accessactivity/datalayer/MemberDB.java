@@ -15,7 +15,7 @@ public class MemberDB {
         Member member = new Member(
                 resultSet.getString(1),
                 resultSet.getString(2),
-                resultSet.getString(3).charAt(0),
+                resultSet.getString(3),
                 resultSet.getString(4),
                 resultSet.getString(5),
                 resultSet.getDouble(6),

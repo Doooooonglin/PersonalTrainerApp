@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,39 +20,30 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text="Registration Form"
+        android:layout_marginBottom="40dp"
         android:textSize="28sp"
         android:textStyle="bold" />
-    <TextView
-        android:id="@+id/form_info_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Name (Last, First)"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/edt_form_info_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_marginBottom="20dp"
+        android:hint="First Name, Last Name"
         android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/form_info_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Address"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/edt_form_info_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
+        android:hint="Address"
         android:inputType="textPostalAddress" />
     <TextView
         android:id="@+id/form_info_gender"
@@ -84,37 +80,24 @@
         />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/form_info_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Phone Number"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/edt_form_info_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:inputType="phone" />
-
-    <TextView
-        android:id="@+id/form_info_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Email"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="2dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone" />
     <EditText
         android:id="@+id/edt_form_info_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:hint="Email"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:inputType="textEmailAddress" />
 <!--    is other info coming from membership cl;ass orrrrr -->
@@ -126,4 +109,6 @@
         android:layout_marginTop="40dp"
         android:enabled="true"
         android:text="Submit" />
+
 </LinearLayout>
+</ScrollView>

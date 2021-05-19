@@ -1,6 +1,7 @@
 package com.bignerdranch.android.personaltrainerapp.accessactivity.datalayer;
 
 import android.database.Cursor;
+import android.widget.ScrollView;
 
 import com.bignerdranch.android.personaltrainerapp.database.helperclass.DatabaseHelper;
 
@@ -9,7 +10,7 @@ import java.util.Date;
 public class Member {
     private String mName;
     private String mAddress;
-    private char mGender;
+    private String mGender;
     private String mPhoneNum;
     private String mEmail;
     private double mFee;
@@ -19,7 +20,7 @@ public class Member {
     public Member() {
     }
 
-    public Member(String name, String address, char gender, String phoneNum, String email, double fee, String lastPayment, boolean isActive) {
+    public Member(String name, String address, String gender, String phoneNum, String email, double fee, String lastPayment, boolean isActive) {
         mName = name;
         mAddress = address;
         mGender = gender;
@@ -46,11 +47,11 @@ public class Member {
         mAddress = address;
     }
 
-    public char getGender() {
+    public String getGender() {
         return mGender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         mGender = gender;
     }
 

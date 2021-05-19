@@ -39,22 +39,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        try{
+            db.execSQL(Config.DROP_TABLE_CLASS_ACTIVITY);
+            showToast("Called DROP_TABLE_CLASS_ACTIVITY");
+            db.execSQL(Config.DROP_TABLE_MEMBER);
+            showToast("Called DROP_TABLE_MEMBER");
+            db.execSQL(Config.DROP_TABLE_MEMBER_CARD);
+            showToast("Called DROP_TABLE_MEMBER_CARD");
+            db.execSQL(Config.DROP_TABLE_MEMBERSHIP);
+            showToast("Called DROP_TABLE_MEMBERSHIP");
+            db.execSQL(Config.DROP_TABLE_TRANSACTION);
+            showToast("Called DROP_TABLE_TRANSACTION");
+        }catch (Exception e){
+            showToast("Exception: " + e);
+        }
+        try {
+            db.execSQL(Config.CREATE_TABLE_CLASS_ACTIVITY);
+            db.execSQL(Config.CREATE_TABLE_MEMBER);
+            db.execSQL(Config.CREATE_TABLE_MEMBER_CARD);
+            db.execSQL(Config.CREATE_TABLE_MEMBERSHIP);
+            db.execSQL(Config.CREATE_TABLE_TRANSACTION);
 
+            showToast("Created the tables for the database.");
+        }
+        catch(Exception e) {
+            showToast(e.getMessage());
+        }
     }
 
-    public long insertMember(String name, String address, String gender,String phoneNum, String email){
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("mName", name);
-        contentValues.put("mAddress", address);
-        contentValues.put("mGender", gender);
-        contentValues.put("mPhoneNum", phoneNum);
-        contentValues.put("mEmail", email);
-
-        showToast(contentValues.toString());
-        sqLiteDatabase = this.getWritableDatabase();
-        long rowId = sqLiteDatabase.insert(ConfigMember.MEMBER_TABLE_NAME,null,contentValues);
-        return rowId;
-    }
 
     public Cursor retrieveMember(String name) {
         //Retrieve the DB
@@ -117,6 +129,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     null, contentValues); //You need to provide the table name, the column data, the where clause & a string array)
 
         return rowNumUpd;
+    }
+
+
+    public long insertMember(String name, String address, String gender,String phoneNum, String email,double fee, String lastPayment,boolean isValid){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("address", address);
+        contentValues.put("gender", gender);
+        contentValues.put("phone_num", phoneNum);
+        contentValues.put("email", email);
+        contentValues.put("fee", fee);
+        contentValues.put("last_payment", lastPayment);
+        contentValues.put("is_active", isValid);
+
+        showToast(contentValues.toString());
+
+        sqLiteDatabase = this.getWritableDatabase();
+        long rowId = sqLiteDatabase.insert(ConfigMember.MEMBER_TABLE_NAME,null,contentValues);
+        return rowId;
     }
 
     public Cursor getTransaction(int tID) {
