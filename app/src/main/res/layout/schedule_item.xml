@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_dark"
+    android:orientation="vertical"
+    tools:context=".accessactivity.viewlayer.screens.AccessActivity">
+
+    <ImageView
+        android:id="@+id/iv_trainer_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_stadium_img"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/iv_stadium_img"
+        android:text="Trainer"
+        android:textColor="#666666"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_stadium_img"
+        android:text="Details"
+        android:textColor="#999999"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="date"
+        android:textColor="#999999"
+        android:textSize="30sp" />
+
+
+
+
+    <TextView
+        android:id="@+id/tv_reserve"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="#318bc7"
+        android:gravity="center"
+        android:text="Reserve"
+        android:textColor="#fff"
+        android:textSize="30sp"/>
+</LinearLayout>

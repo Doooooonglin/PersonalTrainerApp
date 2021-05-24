@@ -13,4 +13,6 @@
     <string name="get_card_info_txt">Retrieve a Member Card</string>
     <string name="signature_text">Check off to sign the slip</string>
     <string name="signature_submit_btn_txt">Submit the Signature</string>
+
+
 </resources>

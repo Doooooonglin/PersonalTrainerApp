@@ -6,15 +6,29 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_orange_dark"
     android:orientation="vertical"
-    tools:context=".ReserveScheduleActivity">
+    tools:context=".accessactivity.viewlayer.screens.AccessActivity">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:id="@+id/tv_order"
+        android:layout_width="289dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="My Schedule"
+        android:textColor="#fff"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/rv_list"
+        android:layout_width="wrap_content"
+        android:layout_height="133dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:text="My Schedule"
+        android:textColor="#fff"
         android:textSize="28sp"
         android:textStyle="bold" />
 </LinearLayout>

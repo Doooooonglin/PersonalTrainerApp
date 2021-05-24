@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.bignerdranch.android.personaltrainerapp.accessactivity.viewlayer.screens.AccessActivity;
+import com.bignerdranch.android.personaltrainerapp.accessactivity.viewlayer.screens.ReserveScheduleActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
     //Declare fields for the widgets
